@@ -5,7 +5,10 @@ import 'dart:convert';
 
 
 class UserListPage extends StatefulWidget {
+  const UserListPage({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _UserListPageState createState() => _UserListPageState();
 }
 
