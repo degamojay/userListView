@@ -1,3 +1,4 @@
+import 'package:activity2/pages/Todos.dart';
 import 'package:flutter/material.dart';
 import 'package:activity2/models/address.dart';
 import 'package:activity2/models/company.dart';
@@ -28,6 +29,11 @@ class UserDetailsPage extends StatelessWidget {
             _buildAddressDetails(user.address),
             const SizedBox(height: 20),
             _buildCompanyDetails(user.company),
+            Center(
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Todos()));
+              }, child: const Text('Show Todos'),),
+            )
           ],
         ),
       ),
