@@ -64,8 +64,8 @@ class _TodosState extends State<Todos> {
 
   Future<List<Todo>> getUsers() async {
     final response =
-        // await http.get(Uri.parse('http://192.168.1.135:3001/fakeUsers'));
-        await http.get(Uri.parse('http://10.0.2.2:3001/todos'));
+        await http.get(Uri.parse('http://192.168.1.135:3001/todos'));
+        //await http.get(Uri.parse('http://10.0.2.2:3001/todos'));
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
       return data.map((json) => Todo.fromJson(json)).toList();

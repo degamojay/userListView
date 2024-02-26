@@ -2,7 +2,7 @@ import 'package:activity2/pages/Todos.dart';
 import 'package:flutter/material.dart';
 import 'package:activity2/models/address.dart';
 import 'package:activity2/models/company.dart';
-import 'user.dart';
+import '../models/user.dart';
 
 class UserDetailsPage extends StatelessWidget {
   final User user;

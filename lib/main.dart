@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:activity2/models/user.dart';
-import 'package:activity2/models/user_details_page.dart';
+import 'package:activity2/pages/user_details_page.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -39,8 +39,8 @@ class _UserListPageState extends State<UserListPage> {
 
   Future<List<User>> fetchUsers() async {
     final response =
-        // await http.get(Uri.parse('http://192.168.1.135:3001/fakeUsers'));
-        await http.get(Uri.parse('http://10.0.2.2:3001/user'));
+        await http.get(Uri.parse('http://192.168.1.135:3001/fakeUsers'));
+        //await http.get(Uri.parse('http://10.0.2.2:3001/user'));
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
       return data.map((json) => User.fromJson(json)).toList();
