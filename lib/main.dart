@@ -6,10 +6,12 @@ import 'dart:convert';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -37,7 +39,8 @@ class _UserListPageState extends State<UserListPage> {
 
   Future<List<User>> fetchUsers() async {
     final response =
-        await http.get(Uri.parse('http://192.168.1.135:3001/fakeUsers'));
+        // await http.get(Uri.parse('http://192.168.1.135:3001/fakeUsers'));
+        await http.get(Uri.parse('http://10.0.2.2:3001/user'));
     if (response.statusCode == 200) {
       final List<dynamic> data = jsonDecode(response.body);
       return data.map((json) => User.fromJson(json)).toList();
